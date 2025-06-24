@@ -73,7 +73,7 @@ class AcademicZoneController extends Controller
         AcademicZoneModel::create([
             'name'        => $request->name,
             'description' => $request->description,
-            'geom' => DB::raw("ST_GeomFromGeoJSON('" . $request->geom . "')"),
+            'geom' => DB::raw("ST_GeomFromText('{$request->input('geom')}', 4326)"),
             'image'       => $filename,
         ]);
 
@@ -111,7 +111,7 @@ class AcademicZoneController extends Controller
         }
 
         $zone->save();
-        
+
         return response()->json(['success' => true]);
     }
 }

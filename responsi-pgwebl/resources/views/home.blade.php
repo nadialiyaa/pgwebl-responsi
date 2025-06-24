@@ -5,7 +5,7 @@
         #hero {
             background-image: url('{{ asset('icon/bg-balairung.jpg') }}');
             position: relative;
-            height: calc(100vh - 56px);
+            height: calc(100vh - 58px);
             color: white;
         }
 
